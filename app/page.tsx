@@ -6,9 +6,11 @@ import { ChevronRight, Shield, Zap, CheckCircle, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import hero from "../public/heroo.jpg"
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     setIsLoaded(true)
@@ -29,9 +31,7 @@ export default function Home() {
     },
   }
 
-  const handleTryEchoId = () => {
-    window.open('http://localhost:5173/', '_blank');
-  }
+ 
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -59,7 +59,7 @@ export default function Home() {
               variants={fadeIn}
               className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400"
             >
-              Echo ID
+              Echo AI
             </motion.h1>
 
             <motion.p variants={fadeIn} className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl">
@@ -74,7 +74,7 @@ export default function Home() {
                 Learn More
               </Button> */}
               <div className="mt-8">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white" onClick={handleTryEchoId}>Try Echo ID Now</Button>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white" onClick={() => router.push('/demo')}>Schedule a Demo</Button>
               </div>
             </motion.div>
           </motion.div>
@@ -203,7 +203,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              How Echo ID <span className="text-blue-400">Works</span>
+              How Echo AI <span className="text-blue-400">Works</span>
             </motion.h2>
             <motion.p variants={fadeIn} className="text-gray-400 max-w-2xl mx-auto">
               Our simple three-step process makes identity verification quick and painless.
@@ -226,7 +226,7 @@ export default function Home() {
               },
               {
                 title: "Match with Database",
-                description: "Echo ID matches your face with existing government ID databases.",
+                description: "Echo AI matches your face with existing government ID databases.",
                 icon: <Zap className="h-10 w-10 text-blue-400" />,
                 delay: 0.2,
               },
@@ -263,7 +263,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Why Choose <span className="text-blue-400">Echo ID</span>
+              Why Choose <span className="text-blue-400">Echo AI</span>
             </motion.h2>
             <motion.p variants={fadeIn} className="text-gray-400 text-xl max-w-2xl mx-auto">
               Our facial KYC solution offers unparalleled advantages for businesses and users alike.
@@ -331,10 +331,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Use Cases for <span className="text-blue-400">Echo ID</span>
+              Use Cases for <span className="text-blue-400">Echo AI</span>
             </motion.h2>
             <motion.p variants={fadeIn} className="text-gray-400 text-xl max-w-2xl mx-auto">
-            Echo ID is versatile and can be used across various industries for secure identity verification.
+            Echo AI is versatile and can be used across various industries for secure identity verification.
             </motion.p>
           </motion.div>
 
@@ -352,6 +352,11 @@ export default function Home() {
                 color: "from-blue-600 to-blue-400",
               },
               {
+                title: "Telecom Services",
+                description: "Simplifies SIM registration and customer identity validation",
+                color: "from-blue-600 to-blue-400",
+              },
+              {
                 title: "Healthcare",
                 description: "Verify patient identity for secure access to medical records and services.",
                 color: "from-indigo-600 to-indigo-400",
@@ -362,9 +367,19 @@ export default function Home() {
                 color: "from-purple-600 to-purple-400",
               },
               {
+                title: "Travel and Hospitality",
+                description: "Facilitates seamless check-ins and compliance with travel regulations",
+                color: "from-blue-600 to-blue-400",
+              },
+              {
                 title: "Corporate Security",
                 description: "Enhance workplace security with reliable employee identification.",
                 color: "from-cyan-600 to-cyan-400",
+              },
+              {
+                title: "E-commerce",
+                description: "Verifies sellers and buyers to build trust and reduce fraud",
+                color: "from-blue-600 to-blue-400",
               },
             ].map((benefit, index) => (
               <motion.div key={index} variants={fadeIn} className="group">
@@ -414,7 +429,14 @@ export default function Home() {
                 Request Demo
               </Button> */}
               <div className="mt-8">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">Try Echo ID Now</Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-blue-600 text-blue-400 hover:bg-blue-950/50"
+                  onClick={() => router.push('/demo')}
+                >
+                  Request Demo
+                </Button>
               </div>
             </motion.div>
           </motion.div>
@@ -427,7 +449,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <h2 className="text-2xl font-bold text-white">
-                Echo <span className="text-blue-400">ID</span>
+                Echo <span className="text-blue-400">AI</span>
               </h2>
               <p className="text-gray-400 mt-2">Next-generation facial KYC solution</p>
             </div>
@@ -450,7 +472,7 @@ export default function Home() {
 
           <div className="border-t border-blue-900/30 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Echo ID. All rights reserved.
+              © {new Date().getFullYear()} Echo AI. All rights reserved.
             </p>
 
             <div className="flex gap-4">

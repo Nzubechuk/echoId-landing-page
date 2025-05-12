@@ -9,8 +9,11 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Echo ID - Advanced Facial KYC Solution",
   description: "Seamless identity verification through advanced facial recognition technology",
-    generator: 'v0.dev'
-}
+  icons: {
+    icon: '/favicon.ico', // Default Next.js favicon
+    apple: '/ai.jpg',
+  },
+};
 
 export default function RootLayout({
   children,
