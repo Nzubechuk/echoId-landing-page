@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { ChevronRight, Shield, Zap, CheckCircle, Users } from "lucide-react"
+import { ChevronRight, Shield, Zap, CheckCircle, Users, Upload, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import hero from "../public/heroo.jpg"
@@ -143,6 +143,10 @@ export default function Home() {
               <div className="space-y-6">
                 {[
                   {
+                    title: "Document OCR",
+                    description: "Accurately extract text from documents using OCR technology.",
+                  },
+                  {
                     title: "Facial Recognition",
                     description: "Advanced AI algorithms that accurately match facial features with stored data.",
                   },
@@ -206,7 +210,7 @@ export default function Home() {
               How Echo AI <span className="text-blue-400">Works</span>
             </motion.h2>
             <motion.p variants={fadeIn} className="text-gray-400 max-w-2xl mx-auto">
-              Our simple three-step process makes identity verification quick and painless.
+              Our simple process makes identity verification quick and painless.
             </motion.p>
           </motion.div>
 
@@ -218,6 +222,18 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             {[
+              {
+                title: "Upload Your Document",
+                description: "Upload your document to the system.",
+                icon: <Upload className="h-10 w-10 text-blue-400" />,
+                delay: 0.1,
+              },
+              {
+                title: "Extract Text from Document",
+                description: "Extract text from the document using OCR technology.",
+                icon: <FileText className="h-10 w-10 text-blue-400" />,
+                delay: 0.1,
+              },
               {
                 title: "Scan Your Face",
                 description: "Our AI-powered system scans and analyzes facial features with precision.",
@@ -278,23 +294,23 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {[
-              {
+               {
                 title: "99.9% Accuracy",
-                description: "Industry-leading facial recognition accuracy for reliable verification.",
+                description: "High accuracy in verifying the identity of the user.",
                 icon: <CheckCircle className="h-8 w-8" />,
                 color: "from-blue-600 to-blue-400",
-              },
-              {
-                title: "Fraud Prevention",
-                description: "Advanced anti-spoofing technology prevents identity fraud attempts.",
-                icon: <Shield className="h-8 w-8" />,
-                color: "from-indigo-600 to-indigo-400",
               },
               {
                 title: "Fast Onboarding",
                 description: "Reduce onboarding time from days to seconds with instant verification.",
                 icon: <Zap className="h-8 w-8 text-blue-400" />,
                 color: "from-purple-600 to-purple-400",
+              },
+              {
+                title: "Fraud Prevention",
+                description: "Advanced anti-spoofing technology prevents identity fraud attempts.",
+                icon: <Shield className="h-8 w-8" />,
+                color: "from-indigo-600 to-indigo-400",
               },
               {
                 title: "Compliance Ready",
